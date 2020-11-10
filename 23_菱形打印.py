@@ -64,3 +64,31 @@ for a in Reslut:
 # 1.主要速录是上线分离考虑，空和符分开考虑，然后利用两段的两重循环，分别实现/我的是想要实现不通输入都可以实现，所以方向不一样。
 # 2.除此之外，比较骚的是人家使用了一个sys的stdout（标准输出流），这个东西还是比较骚的（总的来说比print差不多，但是更底层一些），感觉可以利用
 #      这个东西的映射改变，输出一些adblog的东西
+
+# 其他评论示例：
+
+#===========1===============
+#!/usr/bin/python3
+
+# n = int(input('enter a number:')) 
+# for  i  in range(1,n+1,2):
+#     k = (n-i)//2
+#     print( ' '* k , '*' * i)
+
+# for  p in range(n-2,0,-2):
+#     o = (n-p)//2
+#     print(' '*o, '*'*p)
+
+#============2================
+# #!/usr/bin/python3
+
+# def pic(lines):    
+#     middle, lines = int(lines / 2), int(lines / 2) * 2 + 1    
+#     for i in range(1, lines + 1):        
+#         empty = abs(i - middle - 1)        
+#         print(' ' * empty, '*' * (2 * (middle - empty) + 1))
+# line = 7 # 设置输出行数
+# pic(7)
+
+
+#真的骚

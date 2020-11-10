@@ -13,37 +13,56 @@
 #           Dividend Divisor
 
 tag = True
-inputNumber = 100
+inputNumber = 12
 Dividend = inputNumber
 Divisor = 2
 reslut = []
 
 #因数分解
-while True:    
-    a = Dividend/Divisor
-    #判断是否被整除
-    if a-int(a)==0 and a!=1:
-        reslut.append(Divisor)
-        Dividend = a
+def py14(inputNumber,ifprint):
+    if inputNumber > 1:
+        Dividend = inputNumber
         Divisor = 2
-    else:
-        if Divisor < Dividend:    
-            Divisor += 1
-        else:
+        while True:    
+            a = Dividend/Divisor
+            #判断是否被整除
+            if a-int(a)==0 and a!=1:
+                reslut.append(Divisor)
+                Dividend = a
+                Divisor = 2
+            else:
+                if Divisor < Dividend:    
+                    Divisor += 1
+                else:
+                    if reslut !=[]:
+                        reslut.append(int(Dividend))
+                    break
+        if ifprint:            
+            # 打印结果
             if reslut !=[]:
-                reslut.append(int(Dividend))
-            break
+                print(str(inputNumber)+"=",end="")
+                for i in range(len(reslut)):
+                    print(reslut[i],end="")
+                    if i<(len(reslut)-1):
+                        print("*",end="")
+                print()
+            else:
+                print("不可分解")
 
-# 打印结果
-if reslut !=[]:
-    print(str(inputNumber)+"=",end="")
-    for i in range(len(reslut)):
-        print(reslut[i],end="")
-        if i<(len(reslut)-1):
-            print("*",end="")
-else:
-    print("不可分解")
-    
+        #结果是否输出
+        if reslut !=[] :
+            reslut.clear()
+            return True
+        else:
+            reslut.clear()
+            return False
+    else:
+        print("InputNumber must be bigger than 1") 
+        return False
+
+if __name__ =="__main__":
+    py14(9,1)            
+
 
 ##总结
 # 1.真正输入的边界是需要判断的，比如这次的输入：需要是大于0的int
